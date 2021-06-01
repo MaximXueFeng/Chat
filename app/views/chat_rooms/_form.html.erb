@@ -21,6 +21,11 @@
     <%= form.text_field :title %>
   </div>
 
+  <div>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

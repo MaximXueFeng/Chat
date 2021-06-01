@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "chat_rooms#index"
 
-  resources :chat_rooms
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :chat_rooms do
+    resources :messages
+  end
 end

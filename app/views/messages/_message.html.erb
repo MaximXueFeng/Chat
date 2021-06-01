@@ -1,0 +1,15 @@
+<p>
+  <strong>Nickname:</strong>
+  <%= message.nickname %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= message.text %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Message', [message.chat_room, message],
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
+</p>

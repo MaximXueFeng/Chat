@@ -1,15 +1,37 @@
-<p>
-  <strong>Nickname:</strong>
-  <%= message.nickname %>
-</p>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .btn {
+        background-color: White;
+        border: none;
+        color: black;
+        padding: 10px 14px;
+        font-size: 14px;
+        cursor: pointer;
+      }
 
-<p>
-  <strong>Message:</strong>
-  <%= message.text %>
-</p>
+      /* Darker background on mouse-over */
+      .btn:hover {
+        background-color: Red;
+      }
+    </style>
+  </head>
 
-<p>
-  <%= link_to 'Destroy Message', [message.chat_room, message],
-    method: :delete,
-    data: { confirm: "Are you sure?" } %>
-</p>
+  <body>
+    <p>
+      <strong>Nickname:</strong>
+      <%= message.nickname %>
+    </p>
+
+    <p>
+      <strong>Text:</strong>
+      <%= message.text %>
+      <%= link_to [message.chat_room, message], method: :delete, data: { confirm: "Are you sure?" }, class: 'btn', remote: true do %>
+        <i class= "fa fa-trash" ></i>
+      <% end %>
+    </p>
+  </body>
+</html>
